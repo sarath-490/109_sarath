@@ -1,0 +1,33 @@
+SMS Spam Filter – Working & Run Instructions
+
+This project implements an SMS Spam Detection system for a telecom messaging gateway. It classifies incoming SMS messages as Spam or Ham (Legitimate) using Natural Language Processing and Machine Learning. The solution follows a hybrid approach combining TF-IDF based text vectorization, a Naive Bayes classifier, and simple regex-based rules for URLs and spam keywords.
+
+Working of the System
+
+The dataset (SMS Spam Collection) is loaded and cleaned.
+
+SMS labels are encoded (spam = 1, ham = 0).
+
+Each message is analyzed using regex rules to detect URLs, currency symbols, and urgency keywords such as free, win, claim, etc.
+
+Messages are converted into numerical features using TF-IDF Vectorization.
+
+A Multinomial Naive Bayes model is trained on 80% of the data.
+
+The remaining 20% is used for evaluation using accuracy, precision, recall, F1-score, and confusion matrix.
+
+Predictions are exported to a CSV file.
+
+The system supports real-time testing where users can input any SMS message and get Spam/Ham classification.
+
+An optional AI explanation module demonstrates how an LLM could explain why a message is classified as spam.
+
+
+**Project Structure**
+
+sms-spam-filter/
+├── data/spam.csv
+├── notebook/sms_spam_filter.ipynb
+├── outputs/predictions.csv
+├── requirements.txt
+├── README.md
